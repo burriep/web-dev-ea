@@ -1,0 +1,66 @@
+<!--Write a simple well formed HTML file with a table, a link in at least one cell and an image in at least one cell. Include a bit of CSS formatting as well. Submit all files in a zipped folder here.-->
+
+<html>
+  <head>
+    <title>Week 1: HTML Check</title>
+    <style>
+      body {
+        background-image: url(stardust.png);
+        font-family: sans-serif;
+      }
+      table {
+        width: 100%;
+      }
+      td {
+        border-radius: 5px;
+        padding: 20px;
+      }
+      .header {
+        background: red;
+      }
+      .trio {
+        background: lightblue;
+      }
+      .left, .right {
+        width: 25%;
+      }
+      .left {
+        background: white;
+      }
+      #footer {
+        background: hsla(0, 0%, 0%, 0.25);
+        color: white;
+      }
+      a {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="3" class="header">
+          <h1>Week 1: HTML Check</h1>
+          <h2>We have ourselves a header up here!</h2>
+        </td>
+      </tr>
+      <tr id="content">
+        <td class="left trio">
+          <a href="http://chrome.com">
+            <img src="img1.png" alt="Google Chrome Logo" title="Learn more about Google Chrome">
+          </a>
+          <p>Google Chrome is a modern web browser built for the web. Learn more at <a href="http://chrome.com">chrome.com</a> </p>
+        </td>
+        <td class="center trio"><p>Ooh, the middle of the page! Well, sort of.</p></td>
+        <td class="right trio">
+          <aside>Hey look, I'm semantically aside! Yay for HTML5. Oh, wait, I'm also in a table, ugh. Why???</aside>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" id="footer">
+          <small>&copy; 2014 | Paul Burrie | Just because I can! <br> "Stardust" Background texture provided by <a href="http://subtlepatterns.com/">Subtle Patterns</a></small>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
