@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Week 3 Project</title>
+  </head>
+  <body>
+  <h1>Week 3 Project</h1>
+    <p>Create an html file with the JavaScript code in it that:<br>
+	1. Asks a user for a number to cube, returns that value cubed and displays the result in an alert box</p>
+	<button onclick="cube()">Cube It!</button>
+	<p>2. Starts a start timer button and returns some text in a Alert box every four seconds until a stop timer button is clicked</p>
+	<button onclick="startTimer(4000)">Start Timer</button>
+	<button onclick="stopTimer()">Stop Timer</button>
+    <script type="text/javascript">
+    	function cube () {
+    		x = parseInt(prompt("Insert a number to cube."))
+    		alert(x*x)
+    	}
+    	function startTimer (Duration) {
+    		timer = setInterval("showTime()",Duration)
+    	}
+		function showTime() {
+			alert("Hey! I\'m still here!")
+		}
+		function stopTimer() {
+			clearInterval(timer)
+		}
+    </script>
+  </body>
+</html>
