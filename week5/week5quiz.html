@@ -1,0 +1,31 @@
+<!--In a html file write the JavaScript code that will ask a user to enter a number between 1 and 5 and then using if, else if, and else conditionals, report back to the users using an Alert box which number was entered. Submit you file here when finished-->
+
+
+<!-- File located at burriep.github.io/web-dev-ea/week5/week5quiz.html-->
+
+<html>
+  <head>
+    <title>Week 5 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 5 Quiz</h1>
+    <button onclick="testing()">Run JS</button>
+    
+    <script>
+      function testing(){
+        x = parseInt(prompt('Enter a number between 1 and 5'));
+        if (x < 1){
+          alert("That number is too small");
+        }
+        else if ((x > 0) && (x < 6)){
+          alert(x);
+        }
+        else{
+          alert("That number is too big");
+        }
+      }
+    </script>
+  </body>
+</html>

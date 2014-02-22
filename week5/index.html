@@ -1,0 +1,59 @@
+<!--In a html file create the JavaScript code that will create a 5 question math quiz using prompt boxes, keep it simple, I will have to be taking this for each of you, keep track of the number of answers the user gets correct and then use a case switch to put a text message in an Alert box reporting how well the user did. Please be kind in you text message. Submit your finished file here.-->
+
+
+<!-- File located at burriep.github.io/web-dev-ea/week5/index.html-->
+
+<html>
+  <head>
+    <title>Week 5 Project</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 5 Project</h1>
+    <button onclick="question()">Start Quiz</button>
+    
+    <script>
+      function question(){
+        var q=1;
+        var correct = 0;
+        if (parseInt(prompt('Question 1: 1 + 1')) == 2){
+          correct++;
+        }
+        if (parseInt(prompt('Question 2: 8 / 2')) == 4){
+          correct++;
+        }
+        if (parseInt(prompt('Question 3: 2 * 4')) == 8){
+          correct++;
+        }
+        if (parseInt(prompt('Question 4: sin(0)')) == 0){
+          correct++;
+        }
+        if (parseInt(prompt('Question 5: 8 - 1')) == 7){
+          correct++;
+        }
+        
+        switch(correct){
+          case 5:
+            alert("Great job, you got them all correct");
+            break;
+          case 4:
+            alert("Good job, 4 correct");
+            break;
+          case 3:
+            alert("You got 3 correct")
+            break;
+          case 2:
+            alert("You got 2 correct")
+            break;
+          case 1:
+            alert("You only got 1 correct")
+            break;
+          default:
+            alert("You didn't get any correct, try again")
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
