@@ -1,0 +1,59 @@
+<!--In a html file create the JavaScript code that will allow a user to click a button to change the background color of a div to one of four different colors, be sure to include the original color of the background as well so really that would be 5 different buttons, using the innerHTML. -->
+<!--Submit the file here for grading.-->
+
+
+
+
+
+<!-- File located at http://burriep.github.io/web-dev-ea/week4/week4quiz.html -->
+
+
+
+
+
+<html>
+  <head>
+    <title>Week 4 Quiz</title>
+    <style>
+    body {
+      padding:0;
+      margin:0;
+    }
+      #content {
+        padding:20px;
+        display:block;
+        height: 100%;
+      }
+      #colorChooser {
+        width:50px;
+        height:50px;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="content">
+      <h1>Week 4 Quiz</h1>
+      <h2>Predefined Color</h2>
+      <button onclick="color('ffffff')">Reset (white)</button>
+      <button onclick="color('ff0000')">Red</button>
+      <button onclick="color('00ff00')">Green</button>
+      <button onclick="color('0000ff')">Blue</button>
+      <button onclick="color('000000')">Black</button>
+      <section id="choose">
+        <h2>Custom Color</h2>
+        <input type="color" id="colorChooser">
+        <br>
+        <button onclick="customColor()">Apply</button>
+      </section>
+    </section>
+    <script>
+      function color(iColor){
+        document.getElementById('content').style.backgroundColor = "#" + iColor;
+      }
+      function customColor(){
+        myColor = document.getElementById('colorChooser').value;
+        document.getElementById('content').style.backgroundColor = myColor;
+      }
+    </script>
+  </body>
+</html>

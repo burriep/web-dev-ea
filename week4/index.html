@@ -1,0 +1,83 @@
+<!--In a html file create the JavaScript code that uses buttons to controls the text you have put into a div container to using the innerHTML  which:-->
+<!--1 Changes the Font Color to 4 different colors plus the original-->
+<!--2 Changes the Font Size to 4 different sizes plus the original-->
+<!--3. Changes the Font Family to 4 different font types plus the original-->
+<!--4. Changes the Font Alignment to Left, Center or Right-->
+
+
+<!-- File located at http://burriep.github.io/web-dev-ea/week4/index.html -->
+
+
+
+
+
+<html>
+  <head>
+    <title>Week 4 Project</title>
+    <style>
+      .label{
+        display:inline;
+      }
+      body{
+        margin:0;
+      }
+      #suspect{
+        margin:2em;
+        padding:2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Week 4 Project</h1>
+
+    <div id="controls">
+      <section id="textColor">
+        <h2 class="label">Color</h2>
+        <button onclick="textColor('000000')">Reset (Black)</button>
+        <button onclick="textColor('ff0000')">Red</button>
+        <button onclick="textColor('00ff00')">Green</button>
+        <button onclick="textColor('0000ff')">Blue</button>
+        <button onclick="textColor('ffffff')">White</button>
+      </section>
+      <section id="size">
+        <h2 class="label">Size</h2>
+        <button onclick="textSize('1em')">Reset (1em)</button>
+        <button onclick="textSize('1.5em')">1.5</button>
+        <button onclick="textSize('2em')">2</button>
+        <button onclick="textSize('2.5em')">2.5</button>
+        <button onclick="textSize('3em')">3</button>
+      </section>
+      <section id="font">
+        <h2 class="label">Font</h2>
+        <button onclick="fontFamily('Times New Roman')">Reset (Times New Roman)</button>
+        <button onclick="fontFamily('Arial')">Arial</button>
+        <button onclick="fontFamily('Courier New')">Courier New</button>
+        <button onclick="fontFamily('Webdings')">Webdings</button>
+        <button onclick="fontFamily('Impact')">Impact</button>
+      </section>
+      <section id="alignment">
+        <h2 class="label">Align</h2>
+        <button onclick="align('left')">Reset (left)</button>
+        <button onclick="align('center')">Center</button>
+        <button onclick="align('right')">Right</button>
+      </section>
+    </div>
+    
+    <div id="suspect">Here is some test text with some padding and a margin just for fun.</div>
+    
+    <script>
+      function textColor(iColor){
+        document.getElementById('suspect').style.color = "#" + iColor;
+      }
+      function textSize(iSize){
+        document.getElementById('suspect').style.fontSize = iSize;
+      }
+      function fontFamily(iFont){
+        document.getElementById('suspect').style.fontFamily = iFont;
+      }
+      function align(iAlign){
+        document.getElementById('suspect').style.textAlign = iAlign;
+      }
+    </script>
+  </body>
+</html>
