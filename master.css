@@ -1,0 +1,21 @@
+#homeNav{
+    font-family:sans-serif;
+    width:100%;
+    background:orange;
+    color:white;
+}
+#homeNav *{
+	display: inline-block;
+	font-weight: bold;
+}
+
+#homeNavHome{
+	padding: .5em;
+	text-decoration: none;
+	color:black;
+}
+#homeNavText{
+	padding: .5em;
+	text-align: center;
+	color:white;
+}
