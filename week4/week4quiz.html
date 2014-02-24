@@ -29,7 +29,7 @@
   </head>
   <body>
   <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
-    <section id="content">
+    <div id="content">
       <h1>Week 4 Quiz</h1>
       <h2>Predefined Color</h2>
       <button onclick="color('ffffff')">Reset (white)</button>
@@ -37,13 +37,13 @@
       <button onclick="color('00ff00')">Green</button>
       <button onclick="color('0000ff')">Blue</button>
       <button onclick="color('000000')">Black</button>
-      <section id="choose">
+      <div id="choose">
         <h2>Custom Color</h2>
         <input type="color" id="colorChooser">
         <br>
         <button onclick="customColor()">Apply</button>
-      </section>
-    </section>
+      </div>
+    </div>
     <script>
       function color(iColor){
         document.getElementById('content').style.backgroundColor = "#" + iColor;
