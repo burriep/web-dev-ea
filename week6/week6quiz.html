@@ -1,0 +1,36 @@
+<!--In a html file create the JavaScript code that will create a table that has 3 rows and 6 columns and will put in Cell 1 - Cell 18 in the 18 cells. To be clear, the first cell has Cell 1 in it (notice the space between the letters and the number, the second cell  across will have Cell 2 in it until the final cell in the lower right will have Cell 18 in it. The first cell in row 2 will have Cell 7 in it. Submit your completed file here.-->
+<html>
+  <head>
+    <title>Week 6 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+    <style>
+      #gen{
+        border-collapse: collapse;
+        width:50%;
+        height:50%;
+        margin:25px auto auto auto;
+      }
+      td{
+        border: 1px solid red;
+        text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 6 Quiz</h1>
+    <script>
+      document.write("<table id='gen'>");
+      var cell = 1;
+      for(row = 1; row <= 3; row++){
+        document.write("<tr>")
+        for(column = 1; column <= 6; column ++){
+          document.write("<td>Cell " + cell + "</td>");
+          cell ++;
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>")
+    </script>
+  </body>
+</html>

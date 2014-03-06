@@ -1,0 +1,23 @@
+<!-- In a html file write the JavaScript code that will display the following while loop in a div. Submit your completed file here. If the images does not show up in this text box, I have attached it below as well. -->
+<html>
+  <head>
+    <title>Week 6 Project 2</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 6 Project 2</h1>
+    <p>Click the button to see the result of a while loop until i = 5.</p>
+    <button onclick="while_test()">Try it</button>
+    <div id="text_box"></div>
+    <script>
+    function while_test () {
+      var text = "";
+      for(var i=0; i<=5; i++){
+        text = text + "The number is " + i + "<br>";
+      }
+      document.getElementById("text_box").innerHTML = text;
+    }
+    </script>
+  </body>
+</html>
