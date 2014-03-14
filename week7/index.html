@@ -1,0 +1,47 @@
+<!--In a html file write the JavaScript code that will analyze the following sentence in these 4 ways: Do you hear the people sing, singing the song of angry men.-->
+<!--In the html code write this sentence so it is visible before you start using your JavaScript code.-->
+<!--Using 4 different buttons:-->
+<!--1. Display the sentence in all upper case.-->
+<!--2 Display the sentence in all lower case.-->
+<!--3. Find the position where the char f first appears-->
+<!--4. Find the total length of the sentence.-->
+<!--Submit your finished file here.-->
+
+<html>
+  <head>
+    <title>Week 7 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 7 Quiz</h1>
+    <div id="text_box">Do you hear the people sing, singing the song of angry men.</div>
+    <button onclick="allUpper()">Uppercase</button>
+    <div id="textMod1"></div>
+    <button onclick="allLower()">Lowercase</button>
+    <div id="textMod2"></div>
+    <button onclick="findF()">Find f</button>
+    <div id="textMod3"></div>
+    <button onclick="getLength()">Length</button>
+    <div id="textMod4"></div>
+    <script>
+    var original = document.getElementById("text_box").innerHTML;
+    function allUpper(){
+        var mod = original.toUpperCase();
+        document.getElementById("textMod1").innerHTML = mod;
+    }
+    function allLower(){
+        var mod = original.toLowerCase();
+        document.getElementById("textMod2").innerHTML = mod;
+    }
+    function findF(){
+        var mod = original.indexOf("f");
+        document.getElementById("textMod3").innerHTML = mod;
+    }
+    function getLength(){
+        var mod = original.length;
+        document.getElementById("textMod4").innerHTML = mod;
+    }
+    </script>
+  </body>
+</html>
