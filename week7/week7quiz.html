@@ -1,0 +1,20 @@
+<!--In a html file write the code that will create a create a string that is exactly 22 characters long and show that it is that long in an Alert box. (remember spaces count) Submit your completed file here.-->
+<html>
+  <head>
+    <title>Week 7 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 7 Quiz</h1>
+    <div id="text_box"></div>
+    <button onclick="daClick()">Run</button>
+    <script>
+    var text = "Twenty-two characters!";
+    document.getElementById("text_box").innerHTML = text;
+    function daClick(){
+        alert("The string that is on the screen is " + text.length + " chars long");
+    }
+    </script>
+  </body>
+</html>
