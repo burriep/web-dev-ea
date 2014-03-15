@@ -1,0 +1,30 @@
+<!--in a html file create the JavaScript code that will prompt a user to enter a series of text into an Array, like family members names, Greatest All Time QB's, Greatest Presidents, what ever you wish  to ask for. Then create another button that asks the user to enter a number that will retrieve the String value from that Array that corresponds to that Array's key, 0-how ever many entries the user made -1, and displays that String in an Alert box. Submit your finished file here.-->
+<html>
+  <head>
+    <title>Week 8 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 8 Quiz</h1>
+    <div id="text_box"></div>
+    <button onclick="daClick()">Add Names</button>
+    <button onclick="getValue()">Get Name</button>
+    <script>
+    var names = new Array();
+    function daClick(){
+        var another = true;
+        var n = 0;
+        while(another){
+            names[n] = prompt("Type a name to add it to the list.");
+            another = confirm("Add another name?");
+            n++;
+        }
+    }
+    function getValue(){
+        var index = prompt("Enter the number between 0 and " + (names.length - 1) + ".");
+        alert(names[index]);
+    }
+    </script>
+  </body>
+</html>
