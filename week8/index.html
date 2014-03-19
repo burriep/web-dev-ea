@@ -1,0 +1,35 @@
+<!--In a html file create the JavaScript code that will create an Array with 6 String items in it, different names, and then:-->
+<!--1. Create a button that will put the Array into a var and displays that var in an Alert box-->
+<!--2. Create a button that reverses the Array in to a new Array and then puts that into var and displays that var in an Alert box.-->
+<!--3. Create a button that sorts the original Array and displays the content of this new Array in an Alert box-->
+
+<html>
+  <head>
+    <title>Week 8 Project</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 8 Project</h1>
+    <button onclick="display()">Display List</button>
+    <button onclick="reverse()">Reverse List</button>
+    <button onclick="sortMe()">Sort List</button>
+    <script>
+        var myArray = new Array("Abby", "Drake", "Claire", "Bob", "Florence", "Emily");
+        function display(){
+            var temp1 = myArray.join(", ");
+            alert(temp1);
+        }
+        function reverse(){
+            var temp2 = myArray.reverse();
+            var temp3 = temp2.join(", ");
+            alert(temp3);
+        }
+        function sortMe(){
+            var temp4 = myArray.sort();
+            var temp5 = temp4.join(", ");
+            alert(temp5);
+        }
+    </script>
+  </body>
+</html>
