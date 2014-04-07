@@ -1,0 +1,42 @@
+<!--in a html file create the JavaScript code that sets up a multidimensional Array that is two row and three columns populated by the text for different shapes. (circle, square, etc.)-->
+
+<html>
+  <head>
+    <title>Week 9 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+    <style>
+        #gen{
+            border-collapse: collapse;
+            width:50%;
+            height:50%;
+            margin:25px auto auto auto;
+        }
+        td{
+            border: 1px solid red;
+            text-align:center;
+        }
+    </style>
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 9 Quiz</h1>
+    <p>In a html file create the JavaScript code that sets up a multidimensional Array that is two row and three columns populated by the text for different shapes. (circle, square, etc.)</p>
+    
+    <script>
+    var shapes = new Array();
+    shapes[0] = ['circle', 'square'];
+    shapes[1] = ['rectangle', 'octagon'];
+    shapes[2] = ['triangle', 'trapezoid'];
+    
+    document.write("<table id='gen'>");
+    for(row = 0; row < shapes[0].length; row++) {
+        document.write("<tr>");
+        for(col = 0; col < shapes.length; col++) {
+            document.write("<td>" + shapes[col][row] + "</td>");
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>");
+    </script>
+  </body>
+</html>
