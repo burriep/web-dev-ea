@@ -1,0 +1,82 @@
+<!-- In a html file create the JavaScript code that will, using four buttons, take an Array of string items and:
+1. delete the last item from the String and show the contents of the new Array in an Alert box
+2. add an item to the end of the String and show the contents of the new Array in an Alert box
+3. delete the first item from the String and show the contents of the new Array in an Alert box
+4. add an item to the beginning  of the String and show the contents of the new Array in an Alert box -->
+
+<html>
+  <head>
+    <title>Week 9 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+    <style>
+      #gen{
+        border-collapse: collapse;
+        width:50%;
+        height:50%;
+        margin:25px auto auto auto;
+      }
+      td{
+        border: 1px solid red;
+        text-align:center;
+      }
+      #box{
+          width: 500px;
+          background: lightgray;
+          border-left: 4px solid orange;
+          border-radius: 4px;
+          padding: 2em;
+          margin: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 9 Quiz</h1>
+    <h2>Original Array Contents:</h2>
+    <div id="box"></div>
+    
+    
+    <label for="deleteLast">Delete the last element of the array and show the contents.</label>
+    <button id="deleteLast" value="deleteLast" onclick="deleteLast()">Delete Last</button><br>
+    
+    <label for="addLast">Add an item to the end of the string and show the contents.</label>
+    <button id="addLast" value="addLast" onclick="addLast()">Add Last</button><br>
+    
+    <label for="deleteFirst">Delete the first element of the array and show the contents.</label>
+    <button id="deleteFirst" value="deleteFirst" onclick="deleteFirst()">Delete First</button><br>
+    
+    <label for="addFirst">Add an item to the beginning of the string and show the contents.</label>
+    <button id="addFirst" value="addFirst" onclick="addFirst()">Add First</button><br>
+    
+    <script>
+    var shapes = ['circle', 'square', 'triangle', 'hexagon', 'decagon'];
+    
+    document.getElementById("box").innerHTML = shapes.join(", ");
+    
+    function deleteLast() {
+        var temp1 = shapes;
+        temp1.pop();
+        var temp1a =  temp1.join(", ");
+        alert(temp1a);
+    }
+    function addLast() {
+        var temp2 = shapes;
+        temp2.push("Cube");
+        var temp2a =  temp2.join(", ");
+        alert(temp2a);
+    }
+    function deleteFirst() {
+        var temp3 = shapes;
+        temp3.shift();
+        var temp3a =  temp3.join(", ");
+        alert(temp3a);
+    }
+    function addFirst() {
+        var temp4 = shapes;
+        temp4.unshift("Sphere");
+        var temp4a =  temp4.join(", ");
+        alert(temp4a);
+    }
+    </script>
+  </body>
+</html>
