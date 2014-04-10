@@ -1,0 +1,24 @@
+<!-- In a html file create the JavaScript code that will allow the user to see an image, mouse over to change the image and mouse out to restore the original image. Both images need to be the same size. Submit your finished file here -->
+
+<html>
+  <head>
+    <title>Week 10 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 10 Quiz</h1>
+    <p>In a html file create the JavaScript code that will allow the user to see an image, mouse over to change the image and mouse out to restore the original image. Both images need to be the same size. Submit your finished file here</p>
+    
+    <img src="img1.png" name="imgA" width="100" height="100" id="imgA" onmouseover="changeFirst()" onmouseout="changeLast()">
+    
+    <script>
+        function changeFirst() {
+            document.imgA.src = "img2.png";
+        }
+        function changeLast() {
+            document.imgA.src = "img1.png";
+        }
+    </script>
+  </body>
+</html>
