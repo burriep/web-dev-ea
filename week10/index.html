@@ -1,0 +1,88 @@
+<!-- In a html file create the JavaScript code that will pre-load and auto run a minimum 6 image slide show. This is an important skill as many sites will wish to show off samples of there products, houses for sale, products for sale, samples of their work, like landscaping projects. The images need to be all the same size.  -->
+
+<html>
+  <head>
+    <title>Week 10 Project</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+    <style>
+        #imgA {
+            margin:auto;
+        }
+    </style>
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <div id="wrapper">
+        <h1>Week 10 Project</h1>
+        <p>In a html file create the JavaScript code that will pre-load and auto run a minimum 6 image slide show. This is an important skill as many sites will wish to show off samples of there products, houses for sale, products for sale, samples of their work, like landscaping projects. The images need to be all the same size.</p>
+        
+        <center><img src="imgP7.png" name="imgSlideShow" width="640" height="480" id="imgA"></center>
+        
+        <script>
+            var imgP1 = new Image();
+            imgP1.src = "imgP1.png"
+            
+            var imgP2 = new Image();
+            imgP2.src = "imgP2.png"
+            
+            var imgP3 = new Image();
+            imgP3.src = "imgP3.png"
+            
+            var imgP4 = new Image();
+            imgP4.src = "imgP4.png"
+            
+            var imgP5 = new Image();
+            imgP5.src = "imgP5.png"
+            
+            var imgP6 = new Image();
+            imgP6.src = "imgP6.png"
+            
+            var imgP7 = new Image();
+            imgP7.src = "imgP7.png"
+            
+            counter = 1;
+            newImgSrc = "";
+            
+            function changeImage() {
+                newImgSrc = "imgP" + counter + ".png";
+                document.images["imgSlideShow"].src = newImgSrc
+            	counter += 1
+            	if (counter == 8) {
+            		counter = 1
+            	}
+            }
+            
+            setInterval('changeImage()', 1000)
+        </script>
+    </div>
+  </body>
+</html>
+
+
+<!--
+<script language="JavaScript" type="text/javascript">
+// pre-load the desired images to eliminate delay when they flip
+// calling the images as img1, img2, etc makes this really easy
+// add more lines as needed for more images
+img1 = new Image;
+img1.src = "/JStutorials/imgs/img1.jpg"
+img2 = new Image;
+img2.src = "/JStutorials/imgs/img2.jpg"
+img3 = new Image;
+img3.src = "/JStutorials/imgs/img3.jpg"
+counter = 1		// will keep track of which image we are on as function fires
+newImgSrc = ""	// will be used with 'counter' to build the .src for the new img
+
+function changeImg() {
+	newImgSrc = "/JStutorials/imgs/img" + counter + ".jpg"
+	document.images["autoSS"].src = newImgSrc
+	counter += 1
+	if (counter == 4) {	// adjust this according the the number of images rotating (# of images + 1)
+		counter = 1
+	}
+}
+
+setInterval('changeImg()',5000)	// starts the whole img rotation, tweak 5000 to speed up or slow down (1000 = 1 second).
+</script>
+
+-->
