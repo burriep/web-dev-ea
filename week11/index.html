@@ -1,0 +1,128 @@
+<!-- In a html file create the JavaScript code that will set up a auto running pre-loaded slide show of at least six houses and asks the user to submit his or her income, be sure to state no dollar signs or commas, and then uses that value to tell the user which one of the six houses he or she can afford. Add some CSS and HTML code to liven up the look of your "realtor web site".  -->
+
+<html>
+  <head>
+    <title>Week 11 Project</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+    <style>
+        #side{
+            width:250px;
+            float:left;
+            margin-right:2em;
+            background:gold;
+            padding:25px;
+        }
+        #note{
+            color:gray;
+        }
+        #display{
+            float:left;
+        }
+        #houseCost{
+            padding-top:10px;
+        }
+        body{
+            background: #eeeeee;
+        }
+        h1{
+            background:green;
+            font-family:sans-serif;
+            padding:1em;
+            margin:0;
+        }
+    </style>
+  </head>
+  <body onload="setInt()">
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    
+    <h1>Week 11 Project: Realtor Site</h1>
+    <div id="wrapper">
+        <div id="side">
+            <label for="income">Type your annual gross income here to see which houses are in your price range.</label><br>
+            <input type="text" name="income" id="income"><br>
+            <span id="note">Note: only insert numbers, no commas, dollar signs, or other characters.</span>
+            <button type="submit" onclick="getImage()">Submit</button>
+        </div>
+        <div id="display">
+            <img src="house50.jpg" name="imgSlideShow" width="550" height="400" id="imgA">
+            <div id="houseCost"></div>
+        </div>
+        
+        <script>
+            var interval;
+            
+            var house1 = new Image();
+            house1.src = "house50.jpg"; //50-350K houses are every 50K
+            
+            var house2 = new Image();
+            house2.src = "house100.jpg";
+            
+            var house3 = new Image();
+            house3.src = "house150.jpg";
+            
+            var house4 = new Image();
+            house4.src = "house200.jpg";
+            
+            var house5 = new Image();
+            house5.src = "house250.jpg";
+            
+            var house6 = new Image();
+            house6.src = "house300.jpg";
+            
+            var house7 = new Image();
+            house7.src = "house350.jpg";
+            
+            var room = new Image();
+            room.src = "room.jpg";
+            counter = 100;
+            newImgSrc = "";
+            
+            function changeImage() {
+                newImgSrc = "house" + counter + ".jpg";
+                document.images["imgSlideShow"].src = newImgSrc
+                counter += 50
+                if (counter > 350) {
+                    counter = 50
+                }
+            }
+            function getImage(){
+                clearInterval(interval)
+                
+                // Formula for this calculation is completely made up and does not actually work.
+                var theIncome = document.getElementById("income").value;
+                var afford = theIncome * .28 * 30 / 2;
+                // 28% of income toward mortgage * 30 years / 2 (you pay ~double the house cost with interest)
+                if (afford <50000) {
+                    document.images["imgSlideShow"].src = "room.jpg";
+                    var price = "room in a";
+                }else if (afford < 100000) {
+                    document.images["imgSlideShow"].src = "house50.jpg";
+                    var price = "$50,000";
+                }else if (afford < 150000) {
+                    document.images["imgSlideShow"].src = "house100.jpg";
+                    var price = "$100,000";
+                }else if (afford < 200000) {
+                    document.images["imgSlideShow"].src = "house150.jpg";
+                    var price = "$150,000";
+                }else if (afford < 250000) {
+                    document.images["imgSlideShow"].src = "house200.jpg";
+                    var price = "$200,000";
+                }else if (afford < 300000) {
+                    document.images["imgSlideShow"].src = "house250.jpg";
+                    var price = "$250,000";
+                }else if (afford < 350000) {
+                    document.images["imgSlideShow"].src = "house300.jpg";
+                    var price = "$300,000";
+                }else if (afford >= 350000) {
+                    document.images["imgSlideShow"].src = "house350.jpg";
+                    var price = "$350,000";
+                }
+                document.getElementById("houseCost").innerHTML = ("We think you can afford this " + price + " house.");
+            }
+            function setInt(){
+                interval = setInterval('changeImage()', 2000)
+            }
+        </script>
+    </div>
+  </body>
+</html>
