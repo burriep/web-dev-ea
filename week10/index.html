@@ -46,10 +46,10 @@
             function changeImage() {
                 newImgSrc = "imgP" + counter + ".png";
                 document.images["imgSlideShow"].src = newImgSrc
-            	counter += 1
-            	if (counter == 8) {
-            		counter = 1
-            	}
+                counter += 1
+                if (counter == 8) {
+                    counter = 1
+                }
             }
             
             setInterval('changeImage()', 1000)
@@ -57,32 +57,3 @@
     </div>
   </body>
 </html>
-
-
-<!--
-<script language="JavaScript" type="text/javascript">
-// pre-load the desired images to eliminate delay when they flip
-// calling the images as img1, img2, etc makes this really easy
-// add more lines as needed for more images
-img1 = new Image;
-img1.src = "/JStutorials/imgs/img1.jpg"
-img2 = new Image;
-img2.src = "/JStutorials/imgs/img2.jpg"
-img3 = new Image;
-img3.src = "/JStutorials/imgs/img3.jpg"
-counter = 1		// will keep track of which image we are on as function fires
-newImgSrc = ""	// will be used with 'counter' to build the .src for the new img
-
-function changeImg() {
-	newImgSrc = "/JStutorials/imgs/img" + counter + ".jpg"
-	document.images["autoSS"].src = newImgSrc
-	counter += 1
-	if (counter == 4) {	// adjust this according the the number of images rotating (# of images + 1)
-		counter = 1
-	}
-}
-
-setInterval('changeImg()',5000)	// starts the whole img rotation, tweak 5000 to speed up or slow down (1000 = 1 second).
-</script>
-
--->
