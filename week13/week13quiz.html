@@ -1,0 +1,36 @@
+<!-- In an html file create a simple Forms section of your choosing, a simple quiz. Make one field Name. Create a button that asks the user if they are ready to start the quiz? Then upon the OK of the Alert are you ready to start the quiz, set the focus to the first field which is the users name. Submit your finished file here.  -->
+
+<html>
+  <head>
+    <title>Week 13 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+    <style>
+    	#begin{
+    		margin-bottom:50px;
+    	}
+    </style>
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+
+    <h1>Week 13 Quiz</h1>
+    <div id="wrapper">
+	    <button id="begin" onclick="begin()">Begin</button>
+	    <form name="testquiz">
+	      <input type="text" id="name" name="name" placeholder="Name (first and last)"><br>
+	      <input type="text" id="address" name="address" placeholder="Address"><br>
+	      <input type="date" id="birthdate" name="birthdate" placeholder="Birthdate (mm/dd/yyyy)"><br>
+	      <input type="tel" id="phone" name="phone" placeholder="Phone Number"><br>
+	      <button type="submit">Submit</button>
+	    </form>
+    </div>
+    <script>
+    	function begin(){
+    		var ready = confirm("Are you sure you are ready?");
+    		if (ready){
+    			document.testquiz.name.focus()
+    		}
+    	}
+    </script>
+  </body>
+</html>
