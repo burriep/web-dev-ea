@@ -213,3 +213,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+##### Ignore the info.txt file for submitting assignments
+info.txt
