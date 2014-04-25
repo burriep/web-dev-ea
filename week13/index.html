@@ -1,0 +1,64 @@
+<!-- In a html file create a forms section that asks for the users name and then has a radio box section. After each radio box has been selected create a button that uses JavaScript tocheck and verifies  to the user which radio box was selected. Then create a series of check boxes that are followed by radio boxes for selecting items from some sort of list. Like favorite cars, Ford GM Chrysler,  and so on. The check boxes are the company types, like Ford, and the radio boxes are types of cars, Avenger, Taurus, and so on. The purpose to this is to have the car types disabled until the company type of check box is selected. You can do this for any type of list: Favorite Food, anything you wish. Just be sure it the checked box is not checked that the radio boxes under those are disabled. Submit you finished file here  -->
+
+<html>
+  <head>
+    <title>Week 13 Project</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+    <style>
+    	label[disabled]{
+    		color:gray;
+    	}
+    </style>
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+
+    <h1>Week 13 Project</h1>
+    <div id="wrapper">
+    	<p>Please enter your name and choose your favorite car brand and model from the list below.</p>
+	    <form name="testquiz">
+	      <input type="text" id="name" name="name" placeholder="Name (first and last)"><br>
+	      
+	      <label><input type="checkbox" name="brand" value="Ford" onclick="toggleDisable('FordModel')">Ford</label><br>
+	      <label disabled><input type="radio" name="FordModel" value="Explorer" disabled>Explorer</label><br>
+	      <label disabled><input type="radio" name="FordModel" value="Escape" disabled>Escape</label><br>
+	      <label disabled><input type="radio" name="FordModel" value="Fusion" disabled>Fusion</label><br>
+	      <br>
+	      
+	      <label><input type="checkbox" name="brand" value="Chrysler" onclick="toggleDisable('ChryslerModel')">Chrysler</label><br>
+	      <label disabled><input type="radio" name="ChryslerModel" value="300" disabled>300</label><br>
+	      <label disabled><input type="radio" name="ChryslerModel" value="Town and Country" disabled>Town and Country</label><br>
+	      <label disabled><input type="radio" name="ChryslerModel" value="PT Cruiser" disabled>PT Cruiser</label><br>
+	      <br>
+	      
+	      <label><input type="checkbox" name="brand" value="Toyota" onclick="toggleDisable('ToyotaModel')">Toyota</label><br>
+	      <label disabled><input type="radio" name="ToyotaModel" value="Highlander" disabled>Highlander</label><br>
+	      <label disabled><input type="radio" name="ToyotaModel" value="Rav4" disabled>Rav4</label><br>
+	      <label disabled><input type="radio" name="ToyotaModel" value="Tacoma" disabled>Tacoma</label><br>
+	      <br>
+	      
+	      <label><input type="checkbox" name="brand" value="Tesla" onclick="toggleDisable('TeslaModel')">Tesla</label><br>
+	      <label disabled><input type="radio" name="TeslaModel" value="Model S" disabled>Model S</label><br>
+	      <label disabled><input type="radio" name="TeslaModel" value="Model X" disabled>Model X</label><br>
+	      
+	      <button type="submit">Submit</button>
+	    </form>
+    </div>
+    <script>
+    		function toggleDisable(x) {
+					var formElement = eval("document.testquiz." + x)
+					for(var i=0; i<formElement.length; i++){
+						if (formElement[i].disabled) {
+							formElement[i].disabled = false;
+							formElement[i].parentNode.style.color = "black";
+							formElement[i].parentNode.disabled = false;
+						} else {
+							formElement[i].disabled = true;
+							formElement[i].parentNode.style.color = "gray";
+							formElement[i].parentNode.disabled = true;
+						}
+					}
+				}
+    </script>
+  </body>
+</html>
