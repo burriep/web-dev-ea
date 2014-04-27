@@ -1,0 +1,43 @@
+<!-- In a html file create the JavaScript code that will submit the Day & Date in an Alert box in the following format:
+Today is Friday Feb 12th, 2013
+Submit your completed file here  -->
+
+<html>
+  <head>
+    <title>Week 14 Project</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <div id="wrapper">
+    	<h1>Week 14 Project</h1>
+      <button onclick="displayDate()">Current Date and Time</button>
+    	<script type="text/javascript">
+        function displayDate(){
+          var currentDate = new Date;
+          var DOW = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+          var Months = new Array("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec");
+
+          var year = currentDate.getFullYear();
+          var month = Months[currentDate.getMonth()];
+          var day = currentDate.getDate();
+          var dayOfWeek = DOW[currentDate.getDay()];
+          var dayString;
+
+          if (day == 1 || day == 21 || day == 31){
+            dayString = day + "st";
+          }else if(day == 2 || day == 22){
+            dayString = day + "nd";
+          }else if(day == 3 || day == 23){
+            dayString = day + "rd";
+          }else{
+            dayString = day + "th";
+          }
+
+          var formattedDate = dayOfWeek + " " + month + " " + dayString + ", " + year;
+          alert("Today is " + formattedDate);
+        }
+      </script>
+    </div>
+  </body>
+</html>
