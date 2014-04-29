@@ -16,35 +16,35 @@
         <h1>Week 10 Project</h1>
         <p>In a html file create the JavaScript code that will pre-load and auto run a minimum 6 image slide show. This is an important skill as many sites will wish to show off samples of there products, houses for sale, products for sale, samples of their work, like landscaping projects. The images need to be all the same size.</p>
         
-        <center><img src="imgP7.png" name="imgSlideShow" width="640" height="480" id="imgA"></center>
+        <center><img src="imgP7.jpg" name="imgSlideShow" width="640" height="480" id="imgA"></center>
         
         <script>
             var imgP1 = new Image();
-            imgP1.src = "imgP1.png"
+            imgP1.src = "imgP1.jpg"
             
             var imgP2 = new Image();
-            imgP2.src = "imgP2.png"
+            imgP2.src = "imgP2.jpg"
             
             var imgP3 = new Image();
-            imgP3.src = "imgP3.png"
+            imgP3.src = "imgP3.jpg"
             
             var imgP4 = new Image();
-            imgP4.src = "imgP4.png"
+            imgP4.src = "imgP4.jpg"
             
             var imgP5 = new Image();
-            imgP5.src = "imgP5.png"
+            imgP5.src = "imgP5.jpg"
             
             var imgP6 = new Image();
-            imgP6.src = "imgP6.png"
+            imgP6.src = "imgP6.jpg"
             
             var imgP7 = new Image();
-            imgP7.src = "imgP7.png"
+            imgP7.src = "imgP7.jpg"
             
             counter = 1;
             newImgSrc = "";
             
             function changeImage() {
-                newImgSrc = "imgP" + counter + ".png";
+                newImgSrc = "imgP" + counter + ".jpg";
                 document.images["imgSlideShow"].src = newImgSrc
                 counter += 1
                 if (counter == 8) {
@@ -52,7 +52,7 @@
                 }
             }
             
-            setInterval('changeImage()', 1000)
+            setInterval('changeImage()', 2000)
         </script>
     </div>
   </body>
