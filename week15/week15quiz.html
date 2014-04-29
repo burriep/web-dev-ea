@@ -1,0 +1,23 @@
+<!-- In a html file create the JavaScript code that, using a button, asks a user to input an integer and reports back in an Alert box the square root of that integer. Submit your finished file here.  -->
+
+<html>
+  <head>
+    <title>Week 15 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <div id="wrapper">
+    	<h1>Week 15 Quiz</h1>
+      <p>Click the button below and enter a integer into the prompt to take the square root of it.</p>
+      <button onclick="squareRoot()">Square Root</button>
+    </div>
+  </body>
+  <script>
+    function squareRoot(){
+      var input = parseInt(prompt("Enter an integer"));
+      var answer = Math.sqrt(input);
+      alert("The Square root of " + input + " is " + answer);
+    }
+  </script>
+</html>

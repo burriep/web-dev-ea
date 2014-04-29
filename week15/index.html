@@ -1,0 +1,60 @@
+<!-- In a html file create the JavaScript code that will:
+1. Ask a user for a radius of a circle and  report back in an Alert box its area and circumference.
+2. Ask a user for the two sides of a rectangle and report back in an Alert box its area and perimeter.
+3. Ask a user for the height of a rectangle and report back in an Alert box its volume. -->
+
+<html>
+  <head>
+    <title>Week 15 Project</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <div id="wrapper">
+    	<h1>Week 15 Project</h1>
+      <p>Click the button and enter the radius of a circle to calculate its area and circumference.</p>
+      <button onclick="circle()">Enter Radius</button>
+      <br><br>
+      <p>Click the button and enter the length of the sides of a rectangle to calculate its area and perimeter.</p>
+      <button onclick="square2D()">Enter Sides</button>
+      <br><br>
+      <p>Click the button and enter a height for the rectangular prism to calculate its volume</p>
+      <button onclick="square3D()">Enter Height</button>
+    	
+      <script type="text/javascript">
+        var radius = 0;
+        var c_area = 0;
+        var circumference = 0;
+
+        var length = 0;
+        var width = 0;
+        var r_area = 0;
+        var perimeter = 0;
+        var volume = 0;
+
+        function circle(){
+          radius = parseInt(prompt("Enter the radius of the circle:"));
+          c_area = Math.PI * radius * radius;
+          circumference = Math.PI * 2 * radius;
+          alert("A " + radius + " unit circle has a circumference of " + circumference + " units and an area of " + c_area + " square units.");
+        }
+        function square2D(){
+          length = parseInt(prompt("Enter the length of the rectangle."));
+          width = parseInt(prompt("Enter the width of the rectangle."));
+          r_area = length * width;
+          perimeter = length + length + width + width;
+          alert("A " + length + " unit by " + width + " unit rectangle has a perimeter of " + perimeter + " units and an area of " + r_area + " square units.");
+        }
+        function square3D(){
+          if(length == 0 || width == 0){
+            length = parseInt(prompt("Enter the length of the base of the rectangular prism."));
+            width = parseInt(prompt("Enter the width of the base of the rectangular prism."));
+          }
+          height = parseInt(prompt("Enter the height of the rectangular prism."));
+          volume = length * width * height;
+          alert("The volume of a rectangular prism with sides " + length + " by " + width + " by " + height + " is " + volume + " cubic units.")
+        }
+      </script>
+    </div>
+  </body>
+</html>
