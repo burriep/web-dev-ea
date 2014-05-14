@@ -1,0 +1,252 @@
+<!-- In a html file, be sure to make this one look good, create the JavaScript code that will allow a user to click on six different image of dice, supplied here, and then a randomizing code will pick one 1-6, and display that image in a div for each die. 
+
+Repeat this for an opponent. 
+
+Each player gets three throws but can choice to keep a dice and only play the others in that throw. After three throws, or I guess it could be less, the results stay. Then the other player gets a turn. The winner is the player with the highest amount of numbers in a row. For example 5 2's beats 4 6's and so on. You are working to get the most dice with the larger numbers. 4 6's beats 4 5's -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final Exam</title>
+	<link rel="stylesheet" type="text/css" href="../master.css">
+	<style type="text/css">
+		body{
+			background-image: url("felt.jpg");
+			font-family: sans-serif;
+		}
+		img{
+			margin: 10px;
+		}
+		.dice{
+			background-color: white;
+		}
+		.tray{
+			margin: auto;
+			clear: both;
+		}
+		#directions{
+			background-color: rgba(255,255,255,.5);
+			padding: 1rem;
+		}
+		#winner{
+			background-color: yellow;
+		}
+		#wrapper{
+			max-width: 700px;
+			margin: 1em auto;
+		}
+		.tray{
+			text-align: center;
+			background-color: red;
+		}
+		.tray h2{
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+	<div id="wrapper">
+		<div id="directions">
+			<h2>Rules of the game</h2>
+			<p>Each player gets 6 dice. The object of the game is to get the most dice of the same number in a row. If there is a tie, the player with dice of higher value wins. A player can choose to hold a die if he or she does not want that die to be rolled in that throw. To hold a die, click on it. After both players have rolled three (3) times, the winner will be announced.</p>
+		</div>
+		<div id="player1Tray" class="tray">
+			<h2>Player 1 Tray</h2>
+			<img src="die1.png" width="64px" height="64px" id="diePA1" class="dice" alt="1" onclick="holdDie('diePA1')">
+			<img src="die2.png" width="64px" height="64px" id="diePA2" class="dice" alt="2" onclick="holdDie('diePA2')">
+			<img src="die3.png" width="64px" height="64px" id="diePA3" class="dice" alt="3" onclick="holdDie('diePA3')">
+			<img src="die4.png" width="64px" height="64px" id="diePA4" class="dice" alt="4" onclick="holdDie('diePA4')">
+			<img src="die5.png" width="64px" height="64px" id="diePA5" class="dice" alt="5" onclick="holdDie('diePA5')">
+			<img src="die6.png" width="64px" height="64px" id="diePA6" class="dice" alt="6" onclick="holdDie('diePA6')">
+			<img src="roll.svg" width="64px" height="64px" id="diePARoll" class="roll" alt="roll" onclick="rollSet('diePA')">
+		</div>
+		<center><h1 id="winner"></h1></center>
+
+		<div id="player2Tray" class="tray">
+			<h2>Player 2 Tray</h2>
+			<img src="die1.png" width="64px" height="64px" id="diePB1" class="dice" alt="1" onclick="holdDie('diePB1')">
+			<img src="die2.png" width="64px" height="64px" id="diePB2" class="dice" alt="2" onclick="holdDie('diePB2')">
+			<img src="die3.png" width="64px" height="64px" id="diePB3" class="dice" alt="3" onclick="holdDie('diePB3')">
+			<img src="die4.png" width="64px" height="64px" id="diePB4" class="dice" alt="4" onclick="holdDie('diePB4')">
+			<img src="die5.png" width="64px" height="64px" id="diePB5" class="dice" alt="5" onclick="holdDie('diePB5')">
+			<img src="die6.png" width="64px" height="64px" id="diePB6" class="dice" alt="6" onclick="holdDie('diePB6')">
+			<img src="roll.svg" width="64px" height="64px" id="diePBRoll" class="roll" alt="roll" onclick="rollSet('diePB')">
+		</div>
+	</div>
+	<script type="text/javascript">
+		var P1Throw = 0;
+		var P2Throw = 0;
+		var P1InARow = 0;
+		var P2InARow = 0;
+		var P1Value = 0;
+		var P2Value = 0;
+
+		function getRandom () {
+			var randomDie = Math.round(Math.random()*6);
+			if(randomDie<1){
+				randomDie = 1;
+			}
+			return randomDie;
+		}
+
+		function rollSet (set) {
+			var currentThrow;
+			var currentDie;
+			if(set == "diePA"){
+				currentThrow = P1Throw;
+			}else{
+				currentThrow = P2Throw;
+			}
+			if(currentThrow < 3){
+				for (var i = 1; i <= 6; i++) {
+					currentDie = document.getElementById(set + i);
+					if(currentDie.style.backgroundColor != "yellow"){
+						var num = getRandom();
+						currentDie.src = "die" + num + ".png";
+						currentDie.alt = num;
+					}
+				}
+			}
+			if(set == "diePA"){
+				P1Throw++;
+			}else{
+				P2Throw++;
+			}
+			if ((P1Throw>=3) && (P2Throw>=3)) {
+				getWinner();
+			}
+			if (P1Throw >=3){
+				document.getElementById("diePARoll").style.display = "none";
+			}
+			if (P2Throw >=3){
+				document.getElementById("diePBRoll").style.display = "none";
+			}
+		}
+
+		function holdDie (die) {
+			var currentDie = document.getElementById(die);
+			if (currentDie.style.backgroundColor == "yellow") {
+				currentDie.style.backgroundColor = "white";
+			}else{
+				currentDie.style.backgroundColor = "yellow";
+			}
+		}
+
+		function scorePlayer (set) {
+			var leftDie = 0;
+			var rightDie = 0;
+			var currentDie;
+			var lastDie;
+			var inARow1 = 1;
+			var inARow2 = 1;
+			var match1 = 0;
+			var match2 = 0;
+			var match3 = 0;
+			var dieBreak = false;
+			var value = 0;
+			var length = 0;
+
+			for (var i = 1; i <= 6; i++) {
+				currentDie = document.getElementById(set + i);
+				leftDie = rightDie;
+				rightDie = parseInt(currentDie.alt);
+				if(i!=1){
+					lastDie = document.getElementById(set + (i-1));
+				}
+
+				if (match1 == 0) {
+					if (leftDie == rightDie) {
+						inARow1++;
+						match1 = rightDie;
+						currentDie.style.backgroundColor = "#00ff00";
+						lastDie.style.backgroundColor = "#00ff00";
+					}
+				} else{
+					if (match2 == 0) {
+						if (dieBreak) {
+							if (leftDie == rightDie) {
+								inARow2++;
+								match2 = rightDie;
+								dieBreak = false;
+								currentDie.style.backgroundColor = "#00ff00";
+								lastDie.style.backgroundColor = "#00ff00";
+							} else{
+								dieBreak = true;
+							}
+						} else{
+							if (leftDie == rightDie){
+								inARow1++;
+								currentDie.style.backgroundColor = "#00ff00";
+								lastDie.style.backgroundColor = "#00ff00";
+							} else{
+								dieBreak = true;
+							}
+						}
+					} else{
+						if (dieBreak) {
+							if (leftDie == rightDie){
+								match3 = rightDie;
+								currentDie.style.backgroundColor = "#00ff00";
+								lastDie.style.backgroundColor = "#00ff00";
+							}
+						} else{
+							if (leftDie == rightDie){
+								inARow2++;
+								currentDie.style.backgroundColor = "#00ff00";
+								lastDie.style.backgroundColor = "#00ff00";
+							} else{
+								dieBreak = true;
+								console.log("3rd try, no match")
+							}
+						}
+					}
+				}
+			}
+			if (match3 != 0) {
+				length = 2;
+				if ((match1>match2) && (match1>match3)) {
+					value = match1;
+				} else if ((match2>match3) && (match2>match1)) {
+					value = match2;
+				} else if ((match3>match1) && (match3>match2)) {
+					value = match3;
+				}
+			} else{
+				if((inARow2 == 0) || (inARow1 > inARow2) || ((inARow1 == inARow2) && (match1 > match2))){
+					length = inARow1;
+					value = match1;
+				}else if((inARow2 > inARow1) || ((inARow1 == inARow2) && (match2 > match1))){
+					length = inARow2;
+					value = match2;
+				}
+			};
+			if(set == "diePA"){
+				P1InARow = length;
+				P1Value = value;
+			}else{
+				P2InARow = length;
+				P2Value = value;
+			}
+		}
+		function getWinner () {
+			var winner;
+			scorePlayer("diePA");
+			scorePlayer("diePB");
+			if (P1InARow > P2InARow){
+				winner = 1;
+			}else if(P2InARow > P1InARow){
+				winner = 2;
+			}else if(P1Value > P2Value){
+				winner = 1;
+			}else{
+				winner = 2;
+			}
+			document.getElementById("winner").innerHTML = "Player " + winner + " wins!";
+			document.getElementById("winner").style.padding = "1rem"
+			// console.log("Player 1 has " + P1InARow + " " + P1Value + "\'s in a row. P2 has " + P2InARow + " " + P2Value + "\'s in a row.");
+			// console.log("The winner is Player " + winner);
+		}
+	</script>
+</body>
+</html>
