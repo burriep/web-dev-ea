@@ -15,7 +15,7 @@ Each player gets three throws but can choice to keep a dice and only play the ot
 			font-family: sans-serif;
 		}
 		img{
-			margin: 10px;
+			margin: 1rem;
 		}
 		.dice{
 			background-color: white;
@@ -33,7 +33,7 @@ Each player gets three throws but can choice to keep a dice and only play the ot
 		}
 		#wrapper{
 			max-width: 700px;
-			margin: 1em auto;
+			margin: 1rem auto;
 		}
 		.tray{
 			text-align: center;
@@ -197,7 +197,6 @@ Each player gets three throws but can choice to keep a dice and only play the ot
 								lastDie.style.backgroundColor = "#00ff00";
 							} else{
 								dieBreak = true;
-								console.log("3rd try, no match")
 							}
 						}
 					}
@@ -213,7 +212,7 @@ Each player gets three throws but can choice to keep a dice and only play the ot
 					value = match3;
 				}
 			} else{
-				if((inARow2 == 0) || (inARow1 > inARow2) || ((inARow1 == inARow2) && (match1 > match2))){
+				if((inARow2 == 0) || (inARow1 > inARow2) || ((inARow1 == inARow2) && (match1 >= match2))){
 					length = inARow1;
 					value = match1;
 				}else if((inARow2 > inARow1) || ((inARow1 == inARow2) && (match2 > match1))){
