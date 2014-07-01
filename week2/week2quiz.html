@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Week 1 Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../master.css">
+  </head>
+  <body>
+    <nav id="homeNav"><a href="/web-dev-ea/" id="homeNavHome">Home</a><span id="homeNavText">Paul Burrie's Web Development Class Portfolio</span></nav>
+    <h1>Week 2 Quiz</h1>
+    <div class="gray">
+      <p>Explain how to declare a variable and give it a value in JavaScript. Be sure to mention the difference when giving a value to a String vs a number.</p>
+    	<p>Also explain the differences in the three dialog boxes in this unit, Alert, Confirm, and Prompt.</p>
+    	<p>And finally explain how and why you might use a parseInt()  when using a prompt</p>
+    </div>
+
+    <h2>Variables</h2>
+    <p>To declare a variable, you create a variable object and give it a name, regardless of the variable type you intend it to be:</p>
+    <blockquote>var myFirstVar</blockquote>
+    <p>To give it a value, you would set it equal to a value. In order to set it equal to a number, you type the number without quotes after the assignment operator. To give a variable a string as a value, you  would put the string inside quotation marks.</p>
+    <blockquote>myFirstVar = 5;</blockquote>
+    <p>Here I set myFirstVar equal to 5. Now myFirstVar can only hold numbers, it cannot hold a string.</p>
+    <blockquote>var  mySecondVar = "A String in here";</blockquote>
+    <p>Here mySecondVar is given the value "A String in here" which is a string, not a number. mySecondVar cannot hold a number now. Also, you can see that you are able to initialize the variable and give it a value in one statement.</p>
+    <p>You cannot do math with strings, so if you want to do calculations with your variables, you need to make sure that none of them are Strings.</p>
+    <h2>Dialog boxes</h2>
+    <p>The three different dialog boxes in this chapter are as follows:</p>
+    <blockquote>
+      <p>An Alert dialog box sends the user a message, they are only able to click "OK" on the dialog box. It simply informs the user of something.</p>
+      <p>A Confirm dialog box allows the user to choose an action when the prompt appears. They are given the choice of "OK" OR "Cancel" and the page can do different things depending on the user’s choice.</p>
+      <p>A Prompt dialog box allows the user to input data into the page. It contains a text box, the value of which can be assigned to a variable to be used in computations. This value is stored as a string, so if the program is trying to do math, you would need to use parseInt() or parseFloat() in order to parse the string into an integer or a float for calculations.</p>
+    </blockquote>
+  </body>
+</html>
